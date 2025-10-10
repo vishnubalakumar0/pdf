@@ -1,89 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Python Practical Files</title>
-<style>
-  body { font-family: 'Segoe UI', sans-serif; background: #f5f7fa; padding: 40px; text-align: center; }
-  h1 { color: #1f2937; margin-bottom: 40px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; justify-items: center; }
-  .card { background:white; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); cursor:pointer; transition:0.3s; width:150px; height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center;}
-  .card:hover { transform: translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
-  .card img { width:50px; height:50px; }
-  .card h3 { margin-top:10px; color:#2563eb; font-size:1em; text-align:center; }
-</style>
+    <meta charset="UTF-8">
+    <title>Python Practical Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 30px;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .icon-box {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            width: 180px;
+            height: 180px;
+            margin: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .icon-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .icon-box img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+        }
+        .icon-box span {
+            font-weight: bold;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background: rgba(0,0,0,0.7);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 900px;
+            text-align: left;
+            position: relative;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: Consolas, monospace;
+            max-height: 80vh;
+        }
+        .close {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: black;
+        }
+        .modal pre {
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-<h1>📂 Python Practical Files</h1>
+
+<h1>Python Practical Notes</h1>
+
 <div class="grid">
+    <!-- Python program icons -->
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/progl.py','1. Correlation & P-value')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>1. Correlation & P-value</span>
+    </a>
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/prog2.py','2. Scatterplots')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>2. Scatterplots</span>
+    </a>
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/prog3.py','3. Linear Regression')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>3. Linear Regression</span>
+    </a>
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/prog4.py','4. T-Test')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>4. T-Test</span>
+    </a>
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/prog5.py','5. Categorical Features')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>5. Categorical Features</span>
+    </a>
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/prog6.py','6. MLR with Dummy Codes')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>6. MLR with Dummy Codes</span>
+    </a>
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/prog7.py','7. OLS')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>7. OLS</span>
+    </a>
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/prog8.py','8. Univariate Analysis')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>8. Univariate Analysis</span>
+    </a>
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/prog9.py','9. Bivariate Statistics')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>9. Bivariate Statistics</span>
+    </a>
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/prog10.py','10. Multivariate Analysis')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>10. Multivariate Analysis</span>
+    </a>
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/prog11.py','11. Univariate Statistics')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>11. Univariate Statistics</span>
+    </a>
+    <a class="icon-box" href="#" onclick="openPython('static/pyfiles/prog12.py','12. One-way ANOVA')">
+        <img src="https://img.icons8.com/fluency/48/python.png"/>
+        <span>12. One-way ANOVA</span>
+    </a>
 
-  <div class="card" onclick="openFile('progl.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>Correlation</h3>
-  </div>
+    <!-- Extra icon for Viva PDF -->
+    <a class="icon-box" href="static/pyfiles/EDA.pdf" target="_blank">
+        <img src="https://img.icons8.com/fluency/48/pdf.png"/>
+        <span>Viva</span>
+    </a>
+</div>
 
-  <div class="card" onclick="openFile('prog2.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>Scatterplot</h3>
-  </div>
-
-  <div class="card" onclick="openFile('prog3.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>LinearReg</h3>
-  </div>
-
-  <div class="card" onclick="openFile('prog4.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>T-Test</h3>
-  </div>
-
-  <div class="card" onclick="openFile('prog5.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>Categorical</h3>
-  </div>
-
-  <div class="card" onclick="openFile('prog6.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>MLR</h3>
-  </div>
-
-  <div class="card" onclick="openFile('prog7.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>OLS</h3>
-  </div>
-
-  <div class="card" onclick="openFile('prog8.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>Univariate</h3>
-  </div>
-
-  <div class="card" onclick="openFile('prog9.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>Bivariate</h3>
-  </div>
-
-  <div class="card" onclick="openFile('prog10.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>Multivariate</h3>
-  </div>
-
-  <div class="card" onclick="openFile('progl1.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>UniStats</h3>
-  </div>
-
-  <div class="card" onclick="openFile('prog12.py')">
-    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
-    <h3>ANOVA</h3>
-  </div>
-
+<!-- Modal for Python code -->
+<div id="codeModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle"></h2>
+        <pre id="modalCode">Loading...</pre>
+    </div>
 </div>
 
 <script>
-  function openFile(filename) {
-    window.open(`/static/pyfiles/${filename}`, '_blank');
-  }
+function openPython(filePath, title) {
+    fetch(filePath)
+    .then(response => response.text())
+    .then(code => {
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalCode').textContent = code;
+        document.getElementById('codeModal').style.display = "block";
+    })
+    .catch(err => {
+        document.getElementById('modalCode').textContent = "Failed to load file: " + filePath;
+        document.getElementById('codeModal').style.display = "block";
+    });
+}
+
+function closeModal() {
+    document.getElementById('codeModal').style.display = "none";
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    var modal = document.getElementById('codeModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 </script>
+
 </body>
 </html>
