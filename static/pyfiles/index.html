@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Practical Files</title>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #f5f7fa; padding: 40px; text-align: center; }
+  h1 { color: #1f2937; margin-bottom: 40px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; justify-items: center; }
+  .card { background:white; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); cursor:pointer; transition:0.3s; width:150px; height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center;}
+  .card:hover { transform: translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+  .card img { width:50px; height:50px; }
+  .card h3 { margin-top:10px; color:#2563eb; font-size:1em; text-align:center; }
+</style>
+</head>
+<body>
+<h1>📂 Python Practical Files</h1>
+<div class="grid">
+
+  <div class="card" onclick="openFile('progl.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>Correlation</h3>
+  </div>
+
+  <div class="card" onclick="openFile('prog2.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>Scatterplot</h3>
+  </div>
+
+  <div class="card" onclick="openFile('prog3.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>LinearReg</h3>
+  </div>
+
+  <div class="card" onclick="openFile('prog4.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>T-Test</h3>
+  </div>
+
+  <div class="card" onclick="openFile('prog5.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>Categorical</h3>
+  </div>
+
+  <div class="card" onclick="openFile('prog6.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>MLR</h3>
+  </div>
+
+  <div class="card" onclick="openFile('prog7.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>OLS</h3>
+  </div>
+
+  <div class="card" onclick="openFile('prog8.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>Univariate</h3>
+  </div>
+
+  <div class="card" onclick="openFile('prog9.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>Bivariate</h3>
+  </div>
+
+  <div class="card" onclick="openFile('prog10.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>Multivariate</h3>
+  </div>
+
+  <div class="card" onclick="openFile('progl1.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>UniStats</h3>
+  </div>
+
+  <div class="card" onclick="openFile('prog12.py')">
+    <img src="https://cdn-icons-png.flaticon.com/512/136/136528.png" alt="Python File">
+    <h3>ANOVA</h3>
+  </div>
+
+</div>
+
+<script>
+  function openFile(filename) {
+    window.open(`/static/pyfiles/${filename}`, '_blank');
+  }
+</script>
+</body>
+</html>
